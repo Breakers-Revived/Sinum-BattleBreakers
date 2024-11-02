@@ -37,4 +37,6 @@ Sinum Android redirects requests via hooking **curl_easy_setopt** and modifying 
     :try_start_0 
 ```
 2. `cp ./libs/arm64-v8a/libsinum.so ./mod/apk/lib/arm64-v8a/libsinum.so`
-3. `apktool build ./mod/apk -o ./mod/unsigned.apk`
+3. `cp ./Sinum.smali ./mod/apk/smali/`
+4. Patch `./smali/Sinum.smali` and put your own values for HTTP proxying
+5. `apktool build ./mod/apk -o ./mod/unsigned.apk`
